@@ -5,9 +5,11 @@ import Ninjas from './Ninjas';
 
 class App extends Component {
   state = {
-    name: 'Ryu',
-    age: 29,
-    skill: 'Expert'
+    ninjas: [
+      { name: 'Ryu', age: 29, skill: 'Expert' },
+      { name: 'Ken', age: 24, skill: 'Advanced' },
+      { name: 'Badum', age: 45, skill: 'Sifu' }
+    ]
   }
 
   render() {
@@ -16,11 +18,7 @@ class App extends Component {
         <header className="App-header">
           <h1>Net Ninja</h1>
         </header>
-          <Ninjas 
-            name={this.state.name}
-            age={this.state.age}
-            skill={this.state.skill}
-          />
+          <Ninjas ninjas={this.state.ninjas}/>
       </div>
     );
   }
