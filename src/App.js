@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Ninjas from './Ninjas';
 
 class App extends Component {
+  state = {
+    ninjas: [
+      { id: 1, name: 'Ryu', age: 29, skill: 'Expert' },
+      { id: 2, name: 'Ken', age: 24, skill: 'Advanced' },
+      { id: 3, name: 'Badum', age: 45, skill: 'Sifu' }
+    ]
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Net Ninja</h1>
         </header>
+          <Ninjas ninjas={this.state.ninjas}/>
       </div>
     );
   }
