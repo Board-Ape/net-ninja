@@ -16,29 +16,19 @@ const ninjas = ({ ninjas }) => {
     //     }
     // });
 
-    // const ninjaList = ninjas.map(ninja => {
-    //     return ninja.age > 25 ? (
-    //         <div className="ninjas" key={ninja.id}>
-    //             <p>{ninja.name}</p>
-    //             <p>{ninja.age}</p>
-    //             <p>{ninja.skill}</p>
-    //         </div>
-    //     ) : null
-    // })
+    const ninjaList = ninjas.map(ninja => {
+        return ninja.age > 25 ? (
+            <div className="ninjas" key={ninja.id}>
+                <p>{ninja.name}</p>
+                <p>{ninja.age}</p>
+                <p>{ninja.skill}</p>
+            </div>
+        ) : null
+    })
 
     return (
         <div className="ninjas">
-            { 
-                ninjas.map(ninja => {
-                    return ninja.age > 25 ? (
-                        <div className="ninjas" key={ninja.id}>
-                            <p>{ninja.name}</p>
-                            <p>{ninja.age}</p>
-                            <p>{ninja.skill}</p>
-                        </div>
-                ) : null
-        })
-                 }
+            { ninjaList }
         </div>
     );
 }
