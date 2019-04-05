@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Ninjas from './Ninjas';
+import AddNinja from './AddNinja';
 
 class App extends Component {
   state = {
@@ -11,6 +12,14 @@ class App extends Component {
     ]
   }
 
+  addNinja = (ninja) => {
+    const newState = [...this.state.ninjas, ninja]
+
+    this.setState({
+      ninjas: newState
+    })
+  }
+ 
   render() {
     return (
       <div className="App">
@@ -18,6 +27,7 @@ class App extends Component {
           <h1>Net Ninja</h1>
         </header>
           <Ninjas ninjas={this.state.ninjas}/>
+          <AddNinja addNinja={this.addNinja}/>
       </div>
     );
   }
