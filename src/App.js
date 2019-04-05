@@ -6,9 +6,9 @@ import Ninjas from './Ninjas';
 class App extends Component {
   state = {
     ninjas: [
-      { name: 'Ryu', age: 29, skill: 'Expert' },
-      { name: 'Ken', age: 24, skill: 'Advanced' },
-      { name: 'Badum', age: 45, skill: 'Sifu' }
+      { id: 1, name: 'Ryu', age: 29, skill: 'Expert' },
+      { id: 2, name: 'Ken', age: 24, skill: 'Advanced' },
+      { id: 3, name: 'Badum', age: 45, skill: 'Sifu' }
     ]
   }
 
