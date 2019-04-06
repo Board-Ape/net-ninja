@@ -34,8 +34,15 @@ class AddNinja extends Component {
         })
     }
 
-    shouldComponentUpdate() {
+    shouldComponentUpdate(nextProps, nextState) {
         console.log('AddNinja: shouldComponentUpdate()')
+        console.log(nextProps, this.props)
+        console.log(nextState, this.state)
+        if (this.state === nextState && this.props === nextProps) {
+            console.log('NO')
+            return false
+        }
+        console.log('YES')
         return true
     }
 
