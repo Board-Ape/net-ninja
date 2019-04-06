@@ -15,6 +15,11 @@ class AddNinja extends Component {
         console.log('AddNinja: componentDidMount()')
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log('AddNinja: componentDidUpdate()')
+        console.log(prevProps, prevState)
+    }
+
 
     handleChange = (e) => {
         this.setState({
@@ -32,18 +37,6 @@ class AddNinja extends Component {
             age: '',
             skill: ''
         })
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('AddNinja: shouldComponentUpdate()')
-        console.log(nextProps, this.props)
-        console.log(nextState, this.state)
-        if (this.state === nextState && this.props === nextProps) {
-            console.log('NO')
-            return false
-        }
-        console.log('YES')
-        return true
     }
 
     render() {
