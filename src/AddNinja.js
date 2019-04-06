@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
 
 class AddNinja extends Component {
-    state = {
-        name: null,
-        age: null,
-        skill: null
+    constructor(props) {
+        super(props)
+        console.log('AddNinja: constructor()')
+        this.state = {
+            name: '',
+            age: '',
+            skill: ''
+        }
     }
+
+    componentDidMount() {
+        console.log('AddNinja: componentDidMount()')
+    }
+
 
     handleChange = (e) => {
         this.setState({
@@ -17,18 +26,30 @@ class AddNinja extends Component {
         e.preventDefault();
 
         this.props.addNinja(this.state)
+
+        this.setState({
+            name: '',
+            age: '',
+            skill: ''
+        })
+    }
+
+    shouldComponentUpdate() {
+        console.log('AddNinja: shouldComponentUpdate()')
+        return true
     }
 
     render() {
+        console.log('AddNinja: render()')
         return (
             <div>
                 <form>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" onChange={this.handleChange} />
+                    <input type="text" id="name" onChange={this.handleChange} value={this.state.name}/>
                     <label htmlFor="age">Age</label>
-                    <input type="text" id="age" onChange={this.handleChange} />
+                    <input type="text" id="age" onChange={this.handleChange} value={this.state.age}/>
                     <label htmlFor="skill">Skill</label>
-                    <input type="text" id="skill" onChange={this.handleChange} />
+                    <input type="text" id="skill" onChange={this.handleChange} value={this.state.skill}/>
                     <button onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
